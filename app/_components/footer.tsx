@@ -7,7 +7,6 @@ export default function Footer() {
   return (
     <footer className="border-t border-muted bg-transparent pt-24 pb-12">
       <div className="grid gap-12 md:grid-cols-2 items-center">
-        {/* Left: name, tagline, CTA, contacts */}
         <div className="space-y-8">
           <h2 className="text-3xl sm:text-5xl font-semibold leading-tight text-foreground">
             Shobi Ortiz Umaran
@@ -15,7 +14,7 @@ export default function Footer() {
           <p className="text-foreground/80 max-w-prose">
             Let’s make design simple — graphics and UI/UX that feel clear, trustworthy, and effortless.
           </p>
-          <Button variant="outline" className="rounded-full px-5 py-3 text-base sm:text-lg leading-tight tracking-tight">
+          <Button variant="outline" className="rounded-full px-6 h-12 sm:h-14 text-base sm:text-lg leading-tight tracking-tight">
             BOOK A CALL
             <Image src="/phone.svg" alt="call" width={20} height={20} className="inline-block ml-2 size-5 sm:size-6" />
           </Button>
@@ -40,8 +39,7 @@ export default function Footer() {
         </Card>
       </div>
 
-      {/* Bottom links row */}
-      <div className="mt-12 flex justify-center gap-8">
+      <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6">
         <FooterLink href="#">Gmail</FooterLink>
         <FooterLink href="#">Whatapps</FooterLink>
         <FooterLink href="#">Tiktok</FooterLink>
@@ -57,7 +55,10 @@ export default function Footer() {
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="text-foreground opacity-90 hover:opacity-100 leading-none">
+    <Link
+      href={href}
+      className="inline-flex items-center justify-center px-4 min-h-12 rounded-full text-sm sm:text-base text-foreground opacity-90 hover:opacity-100 leading-none"
+    >
       {children}
     </Link>
   );

@@ -17,6 +17,8 @@ export default function DesignExperience() {
     { src: "/nocta.svg", alt: "Nocta", href: "#", width: 200, height: 200 },
     { src: "/bertology.svg", alt: "Bertology", href: "#", width: 200, height: 200 },
     { src: "/ohlalacey.svg", alt: "Ohlalacey Travels", href: "#", width: 200, height: 200 },
+    { src: "/borak-travel.svg", alt: "Borak Travels", href: "#", width: 200, height: 200 },
+    { src: "/mcash.svg", alt: "MCash", href: "#", width: 200, height: 200 },
   ];
   const items: ProjectItem[] = projects ?? [];
   const padded: ProjectItem[] =

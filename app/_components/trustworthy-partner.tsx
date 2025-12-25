@@ -6,7 +6,6 @@ export default function TrustworthyPartner() {
   return (
     <PageSection id="trustworthy-partner">
       <div className="mx-auto grid gap-8 md:grid-cols-2 items-start">
-        {/* Left: label, heading, copy, stats */}
         <div className="space-y-6">
           <p className="text-foreground text-2xl">02</p>
           <h2 className="text-3xl sm:text-6xl font-semibold leading-tight text-foreground mt-20">
@@ -16,7 +15,7 @@ export default function TrustworthyPartner() {
             I’m Shobi, a designer based in Cebu. I focus on making design feel effortless and
             human — from branding to full product design that not only looks good but feels right.
           </p>
-          <div className="grid grid-cols-3 gap-6 pt-2 mt-50">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2 mt-50">
             <div>
               <p className="text-3xl sm:text-5xl mb-6 text-center font-semibold text-foreground">10+</p>
               <p className="text-muted-foreground text-lg text-center">Projects Completed</p>
@@ -32,7 +31,6 @@ export default function TrustworthyPartner() {
           </div>
         </div>
 
-        {/* Right: portrait image in card */}
         <Card className="border-0 overflow-hidden p-0 bg-transparent">
           <CardContent className="h-[90dvh]">
             <Image
