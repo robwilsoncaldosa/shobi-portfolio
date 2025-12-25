@@ -59,12 +59,6 @@ const DEFAULT_CERTIFICATES: Certificate[] = [
     imageSrc: "/udemy-certificate.svg",
     imageAlt: "Udemy course completion certificate",
   },
-  {
-    id: "ux-certificate",
-    title: "UX Certificate",
-    imageSrc: "/ux-certificate.svg",
-    imageAlt: "User experience design certificate",
-  },
 ];
 
 type CertificationsProps = {
@@ -78,8 +72,8 @@ export default function Certifications({
   itemCount = 5,
   title = "Certifications",
 }: CertificationsProps) {
-  const source = items && items.length ? items : DEFAULT_CERTIFICATES;
-  const visible = source.slice(0, itemCount);
+  const source = DEFAULT_CERTIFICATES;
+  const visible = source.slice(0, DEFAULT_CERTIFICATES.length);
 
   if (!visible.length) {
     return null;
@@ -91,26 +85,29 @@ export default function Certifications({
         <h2 className="text-2xl sm:text-3xl font-semibold leading-none text-foreground">
           {title}
         </h2>
-        <Carousel aria-label="Certifications" className="w-full max-w-5xl">
+        <Carousel aria-label="Certifications" className="w-full max-w-5xl" >
           <CarouselContent>
-            {visible.map((certificate) => (
-              <CarouselItem key={certificate.id}>
-                <Card className="border-0 bg-transparent shadow-none flex items-center justify-center">
-                  <CardContent className="flex w-full items-center justify-center px-4 py-4">
-                    <div className="flex w-full max-w-3xl items-center justify-center">
-                      <Image
-                        src={certificate.imageSrc}
-                        alt={certificate.imageAlt || certificate.title}
-                        width={1600}
-                        height={1200}
-                        loading="lazy"
-                        className="h-auto w-full max-w-full object-contain"
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
+            {Array.from({ length: visible.length }).map((_, index) => {
+              const certificate = visible[index];
+              return (
+                <CarouselItem key={certificate.id}>
+                  <Card className="border-0 bg-transparent shadow-none flex items-center justify-center">
+                    <CardContent className="flex w-full items-center justify-center px-4 py-4">
+                      <div className="flex w-full max-w-3xl max-h-[80vh] items-center justify-center">
+                        <Image
+                          src={certificate.imageSrc}
+                          alt={certificate.imageAlt || certificate.title}
+                          width={1600}
+                          height={1200}
+                          loading="lazy"
+                          className="h-full w-auto  object-contain"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              );
+            })}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
