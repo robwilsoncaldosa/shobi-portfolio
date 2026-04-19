@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Card, CardHeader } from "@/components/ui/card";
+import SocialIconLinks from "./social-icon-links";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,16 +21,13 @@ export default function Header() {
   return (
     <Card
       className={cn(
-        // sticky header, layered above content
-        "sticky top-0 z-50 border-0 shadow-none rounded-none",
-        // glassy background when scrolled, transparent at top
-        isScrolled ? "bg-background/70 backdrop-blur-md" : "bg-transparent",
-        // smooth transition for background changes
-        "transition-colors"
+        "sticky top-3 z-50 overflow-hidden rounded-3xl border shadow-[0_18px_40px_-30px_rgba(0,0,0,0.75)] transition-all duration-300",
+        isScrolled
+          ? "border-white/15 bg-background/78 backdrop-blur-xl"
+          : "border-white/10 bg-white/8 backdrop-blur-md",
       )}
     >
-      <CardHeader className="w-full px-4 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-0">
-        {/* Left: logo and titles */}
+      <CardHeader className="w-full px-4 flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6">
         <div className="flex items-center justify-center gap-3 sm:justify-start sm:gap-4">
           <Image
             src="/logo.svg"
@@ -58,60 +54,17 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Right: links */}
-        <nav className="order-last sm:order-none flex w-full flex-wrap items-center justify-center gap-3 text-sm sm:w-auto sm:ml-auto sm:justify-end sm:gap-5 sm:text-base">
-          <HeaderLink href="https://linkedin.com">LinkedIn</HeaderLink>
-          <HeaderLink href="https://facebook.com">Facebook</HeaderLink>
-          <HeaderLink href="https://instagram.com">Instagram</HeaderLink>
-        </nav>
+        <SocialIconLinks
+          className="order-last w-full justify-center sm:order-0 sm:ml-auto sm:w-auto sm:justify-end"
+        />
       </CardHeader>
     </Card>
   );
 }
 
-function HeaderTitle({ className, href, children }: {
+function HeaderTitle({ className, children }: {
   className?: string;
-  href?: string;
   children: React.ReactNode;
 }) {
-  // If href provided, render as link; else as span
-  if (href) {
-    return (
-      <HeaderLink href={href} className={cn("leading-none", className)}>
-        {children}
-      </HeaderLink>
-    );
-  }
   return <span className={cn("leading-none", className)}>{children}</span>;
-}
-
-function HeaderLink({ href, className, children }: {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  const pathname = usePathname();
-  const isExternal = /^https?:\/\//.test(href);
-  const isActive = !isExternal && pathname === href;
-
-  const base = cn(
-    "inline-flex items-center justify-center px-4 min-h-12 rounded-full leading-none",
-    "text-foreground",
-    isActive ? "text-primary" : "opacity-90 hover:opacity-100",
-    className
-  );
-
-  if (isExternal) {
-    return (
-      <Link href={href} target="_blank" rel="noopener noreferrer" className={base}>
-        {children}
-      </Link>
-    );
-  }
-
-  return (
-    <Link href={href} aria-current={isActive ? "page" : undefined} className={base}>
-      {children}
-    </Link>
-  );
 }

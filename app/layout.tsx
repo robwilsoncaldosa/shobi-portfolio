@@ -14,6 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const faviconVersion = "20260419-logo";
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -24,6 +26,22 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Shobi Ortiz Umaran – UI/UX Designer",
   description: "Portfolio of Shobi Ortiz Umaran, UI/UX designer based in the Philippines.",
+  icons: {
+    icon: [
+      {
+        url: `/logo.svg?v=${faviconVersion}`,
+        type: "image/svg+xml",
+        sizes: "32x32",
+      },
+      {
+        url: `/logo.svg?v=${faviconVersion}`,
+        type: "image/svg+xml",
+        sizes: "16x16",
+      },
+    ],
+    shortcut: [`/logo.svg?v=${faviconVersion}`],
+    apple: [`/logo.svg?v=${faviconVersion}`],
+  },
 };
 
 export default function RootLayout({
