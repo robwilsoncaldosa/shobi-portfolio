@@ -1,5 +1,5 @@
 import PageSection from "./page-section";
-import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Image from "next/image";
 
 type PlaygroundItem = {
@@ -31,12 +31,12 @@ export default function DesignPlayground() {
   ];
 
   const tools = [
-    { src: "/logo.svg", alt: "Logo" },
-    { src: "/next.svg", alt: "Next" },
-    { src: "/vercel.svg", alt: "Vercel" },
-    { src: "/globe.svg", alt: "Globe" },
-    { src: "/window.svg", alt: "Window" },
-    { src: "/paint.svg", alt: "Paint" },
+    { src: "/ai.svg", alt: "AI" },
+    { src: "/arrow-something.svg", alt: "Arrow" },
+    { src: "/b-something.svg", alt: "B Something" },
+    { src: "/chatgpt.svg", alt: "ChatGPT" },
+    { src: "/figma.svg", alt: "Figma" },
+    { src: "/notion.svg", alt: "Notion" },
   ];
 
   return (

@@ -6,7 +6,7 @@ export default function PageSection(
   return (
     <section
       id={id}
-      className={cn("min-h-screen w-full snap-start py-16 sm:py-24 first:pt-5", className)}
+      className={cn("min-h-screen w-full snap-start pb-16 sm:pb-24", className)}
       {...props}
     />
   );

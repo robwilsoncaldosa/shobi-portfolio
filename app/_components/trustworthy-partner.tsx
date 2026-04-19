@@ -17,15 +17,15 @@ export default function TrustworthyPartner() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2 mt-50">
             <div>
-              <p className="text-3xl sm:text-5xl mb-6 text-center font-semibold text-foreground">10+</p>
+              <p className="text-3xl sm:text-8xl mb-6 text-center font-semibold text-foreground">10+</p>
               <p className="text-muted-foreground text-lg text-center">Projects Completed</p>
             </div>
             <div>
-              <p className="text-3xl sm:text-5xl mb-6 text-center font-semibold text-foreground">2+</p>
+              <p className="text-3xl sm:text-8xl mb-6 text-center font-semibold text-foreground">2+</p>
               <p className="text-muted-foreground text-lg text-center">Year of Experience</p>
             </div>
             <div>
-              <p className="text-3xl sm:text-5xl mb-6 text-center font-semibold text-foreground">5+</p>
+              <p className="text-3xl sm:text-8xl mb-6 text-center font-semibold text-foreground">5+</p>
               <p className="text-muted-foreground text-lg text-center">Industries Served</p>
             </div>
           </div>

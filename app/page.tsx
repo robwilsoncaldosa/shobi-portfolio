@@ -10,14 +10,14 @@ import Testimonials from "./_components/testimonials";
 
 export default function Home() {
   return (
-    <main className="pt-8 sm:pt-10 lg:pt-16">
+    <main className="pt-8">
       <PageSection id="home">
         <div className="grid gap-8 sm:gap-10 md:grid-cols-2 items-start h-full">
-          <div className="space-y-6 max-w-full sm:max-w-xl flex flex-col h-full">
+          <div className="space-y-6 max-w-full sm:max-w-xl flex flex-col h-full pt-28">
             <h1 className="text-3xl sm:text-5xl md:text-5xl font-semibold leading-tight">
               <span className="text-foreground">HEY, I’M</span>{" "}
               <span className="text-primary">SHOBI</span>
-              <Image src="/paint.svg" alt="paint" width={40} height={40} className="inline-block ml-2 sm:ml-3 size-8 sm:size-10 md:size-12" />
+              <Image src="/paint.svg" alt="paint" width={40} height={40} className="inline-block ml-2 sm:ml-3 size-8 sm:size-10 md:size-20" />
             </h1>
             <p className="text-foreground/80 max-w-[35ch]">
               Hi, I design clean, user-friendly interfaces and help businesses
